@@ -39,16 +39,16 @@
 import { ambilDaftarProduk } from './main.js';
 
 $(document).redy(async function() {
-  let elemenDaftar = $("#daftar-produk > tbody");
-  let daftarproduk = await ambilDaftarProduk();
+  let elemenDaftar = $("#daftar-Produk > tbody");
+  let daftarProduk = await ambilDaftarProduk();
   
-  daftarProuduk.forEach((data) => {
+  daftarProduk.forEach((data) => {
     elemenDaftar.append(
       '<tr>' +
-      '<td>' + '</td>' +
+      '<th>' + '</th>' +
       '<td>' + data.nama + '</td>' +   
-      '<td>' + data.harga +'</td>' +
-      '<td>' + data.stok +'</td>' +
+      '<td>' + data.harga + '</td>' +
+      '<td>' + data.stok +' </td>' +
       '</tr>'
       );
   });

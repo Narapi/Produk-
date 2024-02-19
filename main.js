@@ -29,11 +29,11 @@ const db = getFirestore(app);
 
 export async function ambilDaftarProduk(){
   const refDokumen = collection(db, "produk");
-  const kuery = query(refDokumen, orderBy("nama"));
-  const cuplikankuery = await getDocs(kuery);
+  const kueri = query(refDokumen, orderBy("nama"));
+  const cuplikankueri = await getDocs(kueri);
   
   let hasil = [];
-  cuplikankuery.forEach((dok) => {
+  cuplikankueri.forEach((dok) => {
     hasil.push({ 
       id: dok.id, 
       nama: dok.data().nama,
