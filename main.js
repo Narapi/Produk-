@@ -12,7 +12,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
   updateDoc
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyAQhFoRf_4ecIp-b7pclOk29ncMXpjzELE",
   authDomain: "insan-cemerlang-58879.firebaseapp.com",
@@ -27,9 +26,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export async function ambilDaftarProduk(){
+export async function ambilDaftarProduk() {
   const refDokumen = collection(db, "produk");
   const kueri = query(refDokumen, orderBy("nama"));
+  
   const cuplikankueri = await getDocs(kueri);
   
   let hasil = [];
